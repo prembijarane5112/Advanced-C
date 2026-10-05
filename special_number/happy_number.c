@@ -19,11 +19,28 @@ Let's test the number 19:
 int happy(int);
 int main()
 {
-  int num;
+  int num,rem,sum=0;
   printf("enter number");
   scanf("%d",&num);
 
-    int ret= happy(num);
+
+  while(num!=0)
+  {
+   rem=num%10;
+   int sqr=rem * rem;
+    sum=sum+sqr;
+
+    num=num/10;
+  }
+
+  if(sum==1)
+  printf(" happy number");
+
+
+  else
+  printf("not happy number");
+
+    // int ret= happy(num);
     /*
     if(ret ==1)
     {
@@ -37,18 +54,18 @@ int main()
 
 }
 
-int happy(int num)
-{
-  int rem,square,sum=0;
-  while(num!=0)
-  {
- rem= num%10;
- square= rem* rem;
+// int happy(int num)
+// {
+//   int rem,square,sum=0;
+//   while(num!=0)
+//   {
+//  rem= num%10;
+//  square= rem* rem;
 
- sum=sum+square;
+//  sum=sum+square;
 
- num=num/10;
-  }
+//  num=num/10;
+//   }
 
-printf("%d",sum);
-}
+// printf("%d",sum);
+// }
