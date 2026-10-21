@@ -14,25 +14,14 @@ Print Yes if pattern is alternating, otherwise No
 #include<stdio.h>
 int main()
 {
-  int num ,e_count=0,o_count=0;
-  printf("Enter a number:");
-  scanf("%X",&num);
-
-  for(int i=31;i<=0;i--)
-  {
-  if(num &(1<<i))
-  e_count++;
+  int bin ,size;
+  printf("Enter a number in binary format :");
+  scanf("%d",&bin);
+ 
+  
+  if(bin ^ (bin>>1))
+  printf("yes");
 
   else
-  o_count++;
-  }
-
-  if(e_count==o_count)
-  {
-    printf("Print Yes if pattern is alternating");
-  }
-  else
-  printf( " NO if pattern is  not alternating,");
-
-
+  printf("no");
 }
