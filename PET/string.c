@@ -1,7 +1,9 @@
 
+
 #include <stdio.h>
 #include <string.h>
 
+/*
 char *replace(char str1[], char str2[])
 {
     int i = 0, j = 0;
@@ -45,4 +47,81 @@ int main(void)
     printf("%s\n", ret);
 
     return 0;
+}
+
+*/
+
+
+
+
+
+
+
+
+// wap count the braces 
+
+#include<stdio.h>
+int main()
+{
+    char str[30];
+    char str2[30];
+    int val,tok=-1;
+    printf("enter string:");
+    scanf("%s",str);
+
+
+
+    for(int i=0; str[i]!=0;i++)
+    {
+        if(str[i]=='(' )
+        {
+            val=1;
+        }
+    
+        else if( str[i]=='[')
+        {
+            val=2;
+        }
+        else if(str[i]=='{')
+        {
+            val=4;
+        }
+
+        else 
+        val=0;
+
+        if(val!=0)
+        {
+            str2[++tok]=val;
+        }
+        else if(str[i]==')' || str[i]==']' || str[i]=='}')
+        {
+            if(tok==-1)
+            {
+                printf("not equal:");
+                return 0;
+            }
+            if(str[i]==')')
+            val=1;
+            else if(str[i]==']')
+            val=2;
+           else 
+            val=4;
+
+         if(str2[tok] &val!=0)
+            tok--;
+             else
+             {printf("not equal");
+               return 0;
+             }
+
+        }
+    }
+
+    if(tok==-1)
+    {
+     printf("string not equal:");
+    }
+    else 
+    printf("string is equal:");
 }
