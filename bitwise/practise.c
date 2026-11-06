@@ -280,9 +280,31 @@ Output:
 
 
 
+  /*
+  print the value in left side this msg bit is 1   rq - no 12 -> 1100  op is 8 bcz msb bit value is 8
+
+  
+  #include<stdio.h>
+  int main()
+  {
+    int num,pos=1;
+    printf("enter num");
+      scanf("%d",&num);
+        
+      while(num > 1)
+      {
+        num= num >> 1;
+        pos= pos << 1;
+      }
+
+      printf("%d",pos);
+  }
 
 
 
+
+
+*/
 
 
 
@@ -409,6 +431,7 @@ Unique element: 7
   
   */
 
+  /*
 
   #include<stdio.h>
   int main()
@@ -430,3 +453,81 @@ Unique element: 7
 
 
   }
+
+  */
+
+
+
+  /*
+   
+  //wap check bit is palidrome or not 
+
+   
+  */
+
+  /*
+  #include<stdio.h>
+  int main()
+  {
+    int num,rev=0;
+    printf("Enter num:");
+    scanf("%d",&num);
+
+    int temp= num;
+
+    while(num> 0)
+    {
+
+       int last_bit= num & 1;  // give last bit 
+
+       rev = (rev << 1 ) | last_bit;  //stored last digit 
+
+       num = num >> 1;  // delete last digit 
+    }
+
+    if(temp == rev)
+    {
+      printf("bit is palindrome");
+    }
+    else
+    printf("bit not palidrome");
+  }
+
+  */
+
+
+
+
+
+
+  /*
+  Question: Extract n bits from a position
+Input:
+num = 29
+pos = 3
+n = 2
+
+op-> extracted bits -3;
+
+  
+  */
+
+
+  #include<stdio.h>
+  int main()
+  {
+    int num,pos,bits;
+    printf("Enter the number position and no of bits:");
+    scanf("%d%d%d",&num,&pos,&bits);
+
+      // get n bits
+      int get= ((pos-bits)-1);
+       
+      int set_pos = ((1<<bits)-1);
+
+      int res= set_pos  <<  get;
+
+
+      printf("Extracted bits :%d",res);
+
+  } 
