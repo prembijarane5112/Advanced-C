@@ -128,6 +128,8 @@ int main()
 
 // Create a file named text.txt and add some content to it and Print the contents.
 
+
+#if 0
 #include<stdio.h>
 int main()
 {
@@ -150,10 +152,128 @@ int main()
     
    while((ch = fgetc(fp))!=EOF)
    {
-     putc
+     printf("%c",ch);
    }
 
   fclose(fp); 
 
   printf("added data");
+}
+
+#endif 
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+Enter the number of students : 2 
+
+Enter name of the student : Tingu 
+
+Enter P, C and M marks : 23 22 12   
+
+Enter name of the student : Pingu 
+
+Enter P, C and M marks : 98 87 87
+
+ user@user:~]./read_students_record.out 
+
+------------------------------------------------
+*/
+
+
+// progrma for read a data from user and write in bin files
+
+/*
+#include<stdio.h>
+
+struct student
+{
+  char name[40];
+  int p,c,m;
+};
+
+int main()
+{
+  FILE *fp;
+  struct student s;
+  int n;
+
+  fp = fopen("file.bin","wb");
+  if(fp ==NULL)
+  {
+    printf("not opend");
+    return 1;
+  }
+
+  printf("Enter number of student");
+  scanf("%d",&n);
+
+  for(int i=0;i<n;i++)
+  {
+    printf("Enter name of student");
+    scanf("%s",s.name);
+
+    printf("Enter p,c,m marks");
+    scanf("%d%d%d",&s.p,&s.c,&s.m);
+
+
+
+    fwrite(&s,sizeof(s),1,fp);
+  }
+
+  printf("data addedd");
+
+  fclose(fp);
+
+
+}
+
+*/
+
+
+
+
+
+
+
+
+// read a data from you stored prog in bin files
+
+#include<stdio.h>
+
+struct student
+{
+  char name[40];
+  int p,c,m;
+};
+
+int main()
+{
+   FILE *fp = fopen("file.bin","rb");
+   struct student s;
+
+   if(fp == NULL)
+   {
+    printf("file not opend");
+    return 1;
+   }
+
+
+   while(fread(&s,sizeof(s),1,fp) ==1)
+   {
+    printf("name = %s p = %d  c = %d  m=%d\n ",s.name,s.p,s.c,s.m);
+   }
+
+   fclose(fp) ;  //close the file
+
+   
 }
