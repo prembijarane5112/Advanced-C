@@ -491,6 +491,8 @@ int main()
 
 
 
+#if 0
+
 // / wap to transpose of the matrix  and stored in the seperate matrix 
 
  #include<stdio.h>
@@ -544,4 +546,295 @@ int main()
   }
    
    transpose(r,c,arr);
+}
+
+
+#endif 
+
+
+
+
+
+#if 0
+
+// trasnpose a matrix without using new array n*n matrix same no of rows and col   used by swap method 
+// chagne in the same matrix 
+#include<stdio.h>
+int main()
+{
+  int r,c;
+  printf("Enter row and col:");
+  scanf("%d%d",&r,&c);
+
+   int arr[r][c];
+
+   for(int i=0;i<r;i++)
+   {
+    for(int j=0;j<c;j++)
+    {
+      scanf("%d",&arr[i][j]);
+    }
+
+  }
+     //trasnspose 
+
+     for(int i=0;i<r;i++)
+     {
+      for(int j=i;j<c;j++)
+    //swap arr[i][j]= arr[j][i];
+    {
+       int temp = arr[i][j];
+       arr[i][j]= arr[j][i];
+       arr[j][i]= temp;  
+    }
+
+
+   }
+
+
+   printf("after swaping\n");
+
+   for(int i=0;i<r;i++)
+   {
+    for(int j=0;j<c;j++)
+    {
+      printf("%5d",arr[i][j]);
+    }
+
+    printf("\n");
+   }
+
+}
+
+
+#endif 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#if 0
+
+
+
+/// wap rotate the 2d array using 90 degree clockwise 
+ //  in rotate array 2 step compulsory 1) find the transpose of array  2) reverse the each row in transpose array 
+
+#include<stdio.h>
+int main()
+{
+  int n;
+  printf("Enter row and col:");
+  scanf("%d",&n);
+
+
+  int arr[n][n];
+
+  printf("Enter elements:\n");
+
+  for(int i=0; i<n;i++)
+  {
+    for(int j=0; j<n;j++)
+    {
+      scanf("%d",&arr[i][j]);
+    }
+  }
+
+
+  // transpose of matrix
+
+
+  for(int i=0;i<n;i++)
+  {
+    for(int j=i;j<n;j++)
+{ 
+  //swap 
+    int  temp  =arr[i][j];
+    arr[i][j]=  arr[j][i];
+    arr[j][i]= temp; 
+
+
+}
+  }
+
+
+  printf("\n");
+
+  printf("Transpse :\n");
+
+  for(int i=0;i<n;i++)
+  {
+    for(int j=0;j<n;j++)
+    {
+      printf("%5d",arr[i][j]);
+    }
+
+    printf("\n");
+  }
+
+
+
+   // rotate the array by 90 degree 
+   // reveerse the each row of trnapsoe matrix 
+
+
+    
+   for(int i=0;i<n;i++)
+   {
+    int j=0; // start first idx 
+    int k= n-1; // start last index
+ 
+     while(j<k)
+     { 
+      //swap arr[i][j]=  arr[j][k];
+
+      int temp = arr[i][j];
+      arr[i][j]= arr[i][k];
+
+      arr[i][k]= temp; 
+      j++;
+      k--;
+     }
+     
+   }
+
+
+   // print the rotated  array
+
+   printf("\n Rotated Array\n");
+   for(int i=0;i<n;i++)
+   {
+    for(int j=0;j<n;j++)
+    {
+      printf("%5d",arr[i][j]);
+    }
+
+    printf("\n");
+   }
+}
+
+
+
+
+#endif 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/// wap to multiplication of 2 matrix and print the result 
+#include<stdio.h>
+int main()
+{
+  int m,n;
+  printf("Enter the no of row and col of matrix 1:");
+  scanf("%d %d",&m,&n);
+
+  int a[m][n];  // create first matrix 
+
+  //read elements 
+  for(int i=0;i<m;i++)
+  {
+    for(int j=0;j<n;j++)
+    {
+      scanf("%d",&a[i][j]);
+    }
+  }
+
+
+  int p,q;
+  printf("Enter no of rows and col of matrix 2:");
+  scanf("%d %d",&p,&q);
+
+  int b[p][q];  // createe second matrix 
+
+  printf("Enter 2 matrix elements:");
+
+  for(int i=0; i<p;i++)
+  {
+    for(int j=0;j<q;j++)
+    {
+      scanf("%d",&b[i][j]);
+    }
+  }
+
+  int res[m][q];   // create res matrix thats op matrix 
+
+  
+  if (n !=p)
+  {
+    printf("not multiplcation posssible of given matrix");
+  return  1;
+  }
+
+  else
+  {
+    // multiplicationn
+
+    for(int i=0; i<m;i++)
+  {
+    for(int j=0;j<q;j++)
+    {
+         res[i][j]= 0; 
+         
+         for(int k=0; k<n;k++)
+         {
+          res[i][j] += a[i][k] * b[k][j];
+         }
+    }
+  } 
+  
+  
+
+   printf("resultant matrix is \n");
+
+   for(int i=0; i<m;i++)
+   {
+    for(int j=0;j<q;j++)
+    {
+      printf("%d ",res[i][j]);
+    }
+
+    printf("\n");
+   }
+  }
+
+
+
 }
