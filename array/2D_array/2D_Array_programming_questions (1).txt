@@ -1,0 +1,96 @@
+# 2D Array – Application-Based Questions
+
+## Easy – Static 2D Array
+
+**1. Student Marks Analysis**
+
+A class has N students, and each student has marks in M subjects. Read the marks into a 2D array and perform the following operations:
+
+- Display the marks of all students.
+- Calculate and display the total marks of each student.
+- Find the student who scored the highest total.
+
+**2. Temperature Monitoring System**
+
+A weather station records temperatures at N locations for M different time slots. Store the readings in a 2D array and:
+
+- Display the temperature readings.
+- Find the highest and lowest temperature recorded.
+- Calculate the average temperature of each location.
+
+**3. Inventory Management**
+
+A store maintains the stock details of N products across M branches. Read the stock quantities into a 2D array and:
+
+- Display the stock details.
+- Calculate the total stock of each product across all branches.
+- Find the branch with the highest total stock.
+
+**4. Cinema Seat Availability**
+
+A cinema hall has R rows and C seats in each row. Use a 2D array to represent seat availability (0 – Available, 1 – Booked).
+
+- Display the seating arrangement.
+- Count the available and booked seats.
+- Check whether a given seat is available.
+
+## Medium – FSSD (Fixed Size Second Dimension)
+
+**5. Monthly Sales Report**
+
+A company records sales for N employees over 4 weeks. Store the sales details using FSSD and:
+
+- Display the weekly sales of each employee.
+- Calculate the total sales of each employee.
+- Find the employee with the highest total sales.
+
+**6. Cricket Score Analysis**
+
+Store the scores of N players across 3 different matches using FSSD.
+
+- Display the scores of all players.
+- Calculate the total and average score of each player.
+- Find the player with the highest total score.
+
+**7. Electricity Consumption Analysis**
+
+An electricity board records the consumption of N houses for 12 months. Use FSSD to store the readings.
+
+- Display the monthly consumption of each house.
+- Calculate the annual consumption of each house.
+- Find the house with the highest annual consumption.
+
+## Difficult – Fully Dynamic 2D Array
+
+**8. Examination Result Processing**
+
+A college conducts examinations for N students across M subjects. Dynamically allocate a 2D array to store the marks.
+
+- Read and display the marks.
+- Calculate the average marks of each student.
+- Find the subject with the highest class average.
+- Identify students who scored below 40 in any subject.
+
+**9. Warehouse Stock Management**
+
+A warehouse maintains stock details for N products across M storage locations. Dynamically allocate a 2D array.
+
+- Read the stock quantities.
+- Calculate the total stock available for each product.
+- Find the storage location with the highest total stock.
+- Search for a given product and display its stock across all locations.
+
+**10. Image Pixel Processing**
+
+An image is represented as a grayscale matrix with R rows and C columns. Each element represents a pixel intensity from 0 to 255. Dynamically allocate memory for the matrix.
+
+- Read and display the pixel values.
+- Calculate the average pixel intensity.
+- Find the brightest and darkest pixel.
+- Generate a negative image by replacing each pixel value with 255 - pixel_value.
+
+**Instructions:**
+- Questions 1–4: Use static 2D arrays.
+- Questions 5–7: Use FSSD (variable rows and fixed column size).
+- Questions 8–10: Use fully dynamic 2D arrays with double pointers.
+- Release dynamically allocated memory using `free()`.
