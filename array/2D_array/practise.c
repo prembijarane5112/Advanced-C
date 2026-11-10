@@ -753,7 +753,7 @@ int main()
 
 
 
-
+#if 0
 
 
 
@@ -837,4 +837,135 @@ int main()
 
 
 
+}
+
+
+#endif 
+
+
+
+
+
+
+
+
+
+
+#if 0
+
+
+// wap to print  wave form  printing 
+
+#include<stdio.h>
+int main()
+{
+  int m,n;
+  printf("Enter row and col:");
+  scanf("%d%d",&m,&n);
+
+   int arr[m][n];  // create 2d array 
+  // read 
+  printf("Enter array elements:\n");
+
+  for(int i=0; i<m;i++)
+  {
+    for(int j=0; j<n;j++)
+    {
+      scanf("%d",&arr[i][j]);
+    }
+  }
+
+
+   printf("\nwave form matrix:\n");
+
+   // in wave form understand row is even print as it is row  otherwsise row is odd reverse the row 
+
+   for(int i=0; i<m;i++)
+   {
+    if( i%2 ==0)
+    {
+      for(int j=0;j<n;j++)
+      {
+        printf("%d ",arr[i][j]);
+      }
+    }
+
+     else{
+      for (int j=n-1; j>=0;j--)
+    printf("%d ",arr[i][j]);
+     }
+
+     printf("\n");
+   }
+}
+
+
+#endif 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// wave print  using column wise
+
+#include<stdio.h>
+int main()
+{
+  int row,col;
+  printf("Enter no of rows and cols:");
+  scanf("%d %d",&row,&col);
+
+  int arr[row][col];
+
+  //read 
+
+  for(int i=0; i<row;i++)
+  {
+    for(int j=0; j<col;j++)
+    {
+      scanf("%d",&arr[i][j]);
+    }
+  }
+
+
+
+  // column wise wave form
+
+  for(int i=0; i<col;i++)
+  {
+    // check col is even if even print col reverse otherwise normal
+
+     if( i % 2 == 0)
+     {
+    for(int j=row-1; j>=0;j--)
+    {
+       printf("%d ",arr[j][i]);
+    }
+  }
+
+  else
+  {
+    for (int j=0;j<row;j++)
+    {
+      printf("%d ",arr[j][i]);
+    }
+  }
+
+  printf("\n");
+}
 }
